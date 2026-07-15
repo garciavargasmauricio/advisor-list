@@ -7,15 +7,27 @@ interface Props {
   advisor: Advisor;
 }
 
+/**
+ * Displays an advisor's profile summary, pricing, and action buttons for calls or chats.
+ *
+ * @param {Props} props - The component properties.
+ * @param {Object} props.advisor - The advisor data object containing profile and availability details.
+ */
 export function AdvisorCard({ advisor }: Props) {
   return (
     <>
-      <div className="flex items-center justify-between py-6">
+      <article className="flex items-center justify-between py-6">
         {/* Lado izquierdo */}
         <div className="flex items-center gap-4">
           <Avatar className="h-16 w-16">
-            <AvatarImage src={advisor.avatar} />
-            <AvatarFallback>{advisor.name.charAt(0)}</AvatarFallback>
+            <AvatarImage
+              role="img"
+              alt={`${advisor.name} profile picture`}
+              src={advisor.avatar}
+            />
+            <AvatarFallback aria-hidden="true">
+              {advisor.name.charAt(0)}
+            </AvatarFallback>
           </Avatar>
 
           <div>
@@ -25,15 +37,24 @@ export function AdvisorCard({ advisor }: Props) {
 
         {/* Lado derecho */}
         <div className="flex flex-col items-start gap-3">
-          <p className="text-sm text-muted-foreground">${advisor.price}/min</p>
+          <span
+            aria-label={`Price ${advisor.price} dollars per minute`}
+            className="text-sm text-muted-foreground"
+          >
+            ${advisor.price}/min
+          </span>
 
-          <div className="flex flex-col items-end gap-2">
+          <div
+            role="group"
+            aria-label={`Actions for ${advisor.name}`}
+            className="flex flex-col items-end gap-2"
+          >
             <ActionButton type="call" enabled={advisor.callAvailable} />
 
             <ActionButton type="chat" enabled={advisor.chatAvailable} />
           </div>
         </div>
-      </div>
+      </article>
 
       <Separator />
     </>
