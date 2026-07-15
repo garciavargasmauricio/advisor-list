@@ -6,3 +6,9 @@ export interface Advisor {
   callAvailable: boolean;
   chatAvailable: boolean;
 }
+
+export interface AdvisorAvailability {
+  id: number;
+  callAvailable: boolean;
+  chatAvailable: boolean;
+}

@@ -1,18 +1,12 @@
-"use client";
-
 import { AdvisorList } from "@/components/ui/advisor/advisor-list";
-import { useAdvisors } from "@/hooks/use-advisors";
+import { getAdvisors } from "@/services/advisor.service";
 
-export default function HomePage() {
-  const { data, isLoading, error } = useAdvisors();
-
-  if (isLoading) return <p>Loading...</p>;
-
-  if (error) return <p>Error loading advisors.</p>;
+export default async function HomePage() {
+  const advisor = await getAdvisors();
 
   return (
     <main className="mx-auto max-w-5xl p-8">
-      <AdvisorList advisors={data ?? []} />
+      <AdvisorList advisors={advisor ?? []} />
     </main>
   );
 }
