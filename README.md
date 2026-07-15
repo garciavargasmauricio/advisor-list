@@ -66,8 +66,8 @@ To scale this application globally, the logical next step is implementing **Inte
 Create a `.env.local` file in the root folder and configure your Beeceptor endpoints:
 
 ```bash
-NEXT_PUBLIC_ADVISOR_API=https://beeceptor.com
-NEXT_PUBLIC_AVAILABILITY_API=https://beeceptor.com/advisor-availability
+NEXT_PUBLIC_ADVISOR_API=https://advisor-api.free.beeceptor.com
+NEXT_PUBLIC_AVAILABILITY_API=https://advisor-availability.free.beeceptor.comadvisor-availability
 ```
 
 ### Installation & Scripts
