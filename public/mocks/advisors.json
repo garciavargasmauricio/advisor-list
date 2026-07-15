@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Johnson",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "price": 3,
+    "callAvailable": true,
+    "chatAvailable": false
+  },
+  {
+    "id": 2,
+    "name": "Michael Brown",
+    "avatar": "https://i.pravatar.cc/150?img=2",
+    "price": 2,
+    "callAvailable": false,
+    "chatAvailable": true
+  },
+  {
+    "id": 3,
+    "name": "Emily Davis",
+    "avatar": "https://i.pravatar.cc/150?img=3",
+    "price": 5,
+    "callAvailable": true,
+    "chatAvailable": true
+  }
+]
