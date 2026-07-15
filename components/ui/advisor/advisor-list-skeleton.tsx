@@ -6,7 +6,7 @@ import { AdvisorCardSkeleton } from "./advisor-card-skeleton";
 export function AdvisorListSkeleton() {
   return (
     <>
-      <div className="min-w-xl">
+      <div className="min-w-xl w-full max-w-xl mx-auto">
         {Array.from({ length: 5 }).map((_, index) => (
           <AdvisorCardSkeleton key={index} />
         ))}

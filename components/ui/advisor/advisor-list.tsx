@@ -17,7 +17,10 @@ interface Props {
 export function AdvisorList({ advisors }: Props) {
   const { data } = useAvailabilityPolling(advisors);
   return (
-    <article aria-labelledby="advisor-list-title" className="min-w-xl">
+    <article
+      aria-labelledby="advisor-list-title"
+      className="min-w-xl w-full max-w-xl mx-auto"
+    >
       <h1
         id="advisor-list-title"
         className="text-center text-primary font-bold text-xl"
